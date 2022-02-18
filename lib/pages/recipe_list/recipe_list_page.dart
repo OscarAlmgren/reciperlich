@@ -21,20 +21,38 @@
  */
 
 import 'package:flutter/material.dart';
+import 'package:reciperlich/data/recipe_repository.dart';
+import 'package:reciperlich/pages/recipe_list/widgets/recipe_item_widget.dart';
 
 class RecipeListPage extends StatelessWidget {
   const RecipeListPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    //TODO #1 Add CustomScrollView
+    final recipes = RecipeRepository.getRecipes();
     //TODO #2 Add SliverAppBar
     //TODO #2 Add SliverPadding
     //TODO #3 Add SliverToBoxAdapter
 
-    return const SafeArea(
+    return SafeArea(
       child: Scaffold(
-        body: Placeholder(),
+        body: CustomScrollView(
+          slivers: <Widget>[
+            //TODO Add appBar here
+            SliverFixedExtentList(
+              delegate: SliverChildBuilderDelegate(
+                (context, index) => Padding(
+                  padding: const EdgeInsets.only(bottom: 20),
+                  child: RecipeItem(
+                    recipes[index],
+                  ),
+                ),
+                childCount: recipes.length,
+              ),
+              itemExtent: 110,
+            ),
+          ],
+        ),
       ),
     );
   }
