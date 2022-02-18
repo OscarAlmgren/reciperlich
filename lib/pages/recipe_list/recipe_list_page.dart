@@ -32,8 +32,10 @@ class RecipeListPage extends StatelessWidget {
     //TODO #2 Add SliverPadding
     //TODO #3 Add SliverToBoxAdapter
 
-    return const Scaffold(
-      body: Placeholder(),
+    return const SafeArea(
+      child: Scaffold(
+        body: Placeholder(),
+      ),
     );
   }
 }
