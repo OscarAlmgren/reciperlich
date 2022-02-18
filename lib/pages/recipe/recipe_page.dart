@@ -24,6 +24,7 @@ import 'package:flutter/material.dart';
 
 import '../../constants/colors.dart';
 import '../../models/recipe_model.dart';
+import '../../shared_widgets/app_bar_widget.dart';
 
 class RecipePage extends StatelessWidget {
   final RecipeModel recipe;
@@ -35,7 +36,7 @@ class RecipePage extends StatelessWidget {
     return Scaffold(
       body: CustomScrollView(
         slivers: <Widget>[
-          // TODO: import AppBarWidget
+          AppBarWidget(text: recipe.title, imagePath: recipe.mainImagePath),
           // TODO: Sub Header with text title: 'Instruction'
           SliverToBoxAdapter(
             child: Padding(
