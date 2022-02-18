@@ -28,9 +28,7 @@ import '../../models/recipe_model.dart';
 class RecipePage extends StatelessWidget {
   final RecipeModel recipe;
 
-  const RecipePage(this.recipe, {Key? key})
-      : assert(recipe != null),
-        super(key: key);
+  const RecipePage(this.recipe, {Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

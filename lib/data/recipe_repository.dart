@@ -52,8 +52,7 @@ class RecipeRepository {
             '5 minutes CookTime',
             '\$2.00 Cost'
           ],
-          whereToBuy:
-              '''Walmart and Target''',
+          whereToBuy: '''Walmart and Target''',
           ingredients: [
             'Melted cheese',
             'Macaroni',
@@ -80,7 +79,7 @@ class RecipeRepository {
           whereToBuy: '''I don't know where''',
           ingredients: [
             'meat'
-            'lettuce',
+                'lettuce',
             'Taco shells',
             'Cheese',
             'Lettuce',
@@ -105,54 +104,42 @@ class RecipeRepository {
             'Salt and that\'s it',
           ],
           instructions:
-              '''You get a thingy from the house and you put it in the hot thingy. Turn on the hot thingy and it burns so you have to be careful. You make like, something and put it in it and it cooks. Then you get a plate and finish it. Don\'t leave the plate on the table, you have to throw it away in the sink or flies will get on it.''',
+              '''You get a thingy from the house and you put it in the hot thingy. Turn on the hot thingy and it burns so you have to be careful. You make like, something and put it in it and it cooks. Then you get a plate and finish it. Don't leave the plate on the table, you have to throw it away in the sink or flies will get on it.''',
           iconPath: AppImagePaths.pancakesIcon,
           mainImagePath: AppImagePaths.pancakesImage,
           itemColor: AppColors.lightBlue,
         ),
-
-    RecipeModel(
-      title: 'Michael’s Icecream',
-      details: [
-        '1 Servings',
-        '1 minute Preptime',
-        '1 minute CookTime',
-        '\$3 Cost'
-      ],
-      whereToBuy: '''Icecream shop''',
-      ingredients: [
-        'Milk',
-        'Cow',
-        'Ice cream',
-        'toys'
-      ],
-      instructions:
-      '''You go to the ice cream shop... and.. you tell them you want ice cream and you get it and get out''',
-      iconPath: AppImagePaths.iceCreamIcon,
-      mainImagePath: AppImagePaths.iceCreamImage,
-      itemColor: AppColors.orange,
-    ),
-
-    RecipeModel(
-      title: 'Madonna’s Croissant',
-      details: [
-        '14 Servings',
-        '100 minute Preptime',
-        '1000 minute CookTime',
-        '\$44 Cost'
-      ],
-      whereToBuy: '''Croissant place''',
-      ingredients: [
-        'bread',
-        'honey',
-        'crackers',
-        'football'
-      ],
-      instructions:
-      '''I have croissant in my drawer.. you go to my house and get the croissant''',
-      iconPath: AppImagePaths.croissantIcon,
-      mainImagePath: AppImagePaths.croissantImage,
-      itemColor: AppColors.green,
-    ),
+        RecipeModel(
+          title: 'Michael’s Icecream',
+          details: [
+            '1 Servings',
+            '1 minute Preptime',
+            '1 minute CookTime',
+            '\$3 Cost'
+          ],
+          whereToBuy: '''Icecream shop''',
+          ingredients: ['Milk', 'Cow', 'Ice cream', 'toys'],
+          instructions:
+              '''You go to the ice cream shop... and.. you tell them you want ice cream and you get it and get out''',
+          iconPath: AppImagePaths.iceCreamIcon,
+          mainImagePath: AppImagePaths.iceCreamImage,
+          itemColor: AppColors.orange,
+        ),
+        RecipeModel(
+          title: 'Madonna’s Croissant',
+          details: [
+            '14 Servings',
+            '100 minute Preptime',
+            '1000 minute CookTime',
+            '\$44 Cost'
+          ],
+          whereToBuy: '''Croissant place''',
+          ingredients: ['bread', 'honey', 'crackers', 'football'],
+          instructions:
+              '''I have croissant in my drawer.. you go to my house and get the croissant''',
+          iconPath: AppImagePaths.croissantIcon,
+          mainImagePath: AppImagePaths.croissantImage,
+          itemColor: AppColors.green,
+        ),
       ];
 }

@@ -32,8 +32,7 @@ class RecipeItem extends StatelessWidget {
   const RecipeItem(
     this.recipe, {
     Key? key,
-  })  : assert(recipe != null),
-        super(key: key);
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
