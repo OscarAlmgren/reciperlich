@@ -21,8 +21,8 @@
  */
 
 import 'package:flutter/material.dart';
-import 'package:reciperlich/constants/app_image_paths.dart';
-import 'package:reciperlich/shared_widgets/app_bar_widget.dart';
+import '../../constants/app_image_paths.dart';
+import '../../shared_widgets/app_bar_widget.dart';
 import '../../data/recipe_repository.dart';
 import 'widgets/recipe_item_widget.dart';
 
