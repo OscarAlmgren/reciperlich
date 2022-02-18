@@ -21,8 +21,10 @@
  */
 
 import 'package:flutter/material.dart';
-import 'package:reciperlich/data/recipe_repository.dart';
-import 'package:reciperlich/pages/recipe_list/widgets/recipe_item_widget.dart';
+import 'package:reciperlich/constants/app_image_paths.dart';
+import 'package:reciperlich/shared_widgets/app_bar_widget.dart';
+import '../../data/recipe_repository.dart';
+import 'widgets/recipe_item_widget.dart';
 
 class RecipeListPage extends StatelessWidget {
   const RecipeListPage({Key? key}) : super(key: key);
@@ -38,7 +40,8 @@ class RecipeListPage extends StatelessWidget {
       child: Scaffold(
         body: CustomScrollView(
           slivers: <Widget>[
-            //TODO Add appBar here
+            const AppBarWidget(
+                text: 'Reciperlich', imagePath: AppImagePaths.mainImage),
             SliverFixedExtentList(
               delegate: SliverChildBuilderDelegate(
                 (context, index) => Padding(
