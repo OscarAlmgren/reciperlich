@@ -21,6 +21,8 @@
  */
 
 import 'package:flutter/material.dart';
+import 'package:reciperlich/pages/recipe/widgets/pill_widget.dart';
+import 'package:reciperlich/pages/recipe_list/widgets/sliver_sub_header.dart';
 
 import '../../constants/colors.dart';
 import '../../models/recipe_model.dart';
@@ -36,8 +38,14 @@ class RecipePage extends StatelessWidget {
     return Scaffold(
       body: CustomScrollView(
         slivers: <Widget>[
-          AppBarWidget(text: recipe.title, imagePath: recipe.mainImagePath),
-          // TODO: Sub Header with text title: 'Instruction'
+          AppBarWidget(
+            text: recipe.title,
+            imagePath: recipe.mainImagePath,
+          ),
+          SliverSubHeader(
+            text: 'Instruction',
+            backgroundColor: recipe.itemColor,
+          ),
           SliverToBoxAdapter(
             child: Padding(
               padding: const EdgeInsets.all(15),
@@ -50,11 +58,44 @@ class RecipePage extends StatelessWidget {
               ),
             ),
           ),
-          // TODO: Sub Header with text title: 'Ingredients'
-          // TODO: SliverGrid for recipe.ingredients
-          // TODO: Sub Header with text title: 'Numbers'
-          // TODO: SliverGrid for recipe.details
-          // TODO: SliverFillRemaining
+          SliverSubHeader(
+            text: 'Ingredinets',
+            backgroundColor: recipe.itemColor,
+          ),
+          SliverPadding(
+            padding: const EdgeInsets.all(20),
+            sliver: SliverGrid.count(
+              mainAxisSpacing: 15,
+              crossAxisSpacing: 10,
+              crossAxisCount: 3,
+              childAspectRatio: 3,
+              children: recipe.ingredients.map((e) => PillWidget(e)).toList(),
+            ),
+          ),
+          SliverSubHeader(
+            text: 'Numbers',
+            backgroundColor: recipe.itemColor,
+          ),
+          SliverPadding(
+            padding: const EdgeInsets.all(15),
+            sliver: SliverGrid(
+              delegate: SliverChildBuilderDelegate(
+                ((context, index) => PillWidget(
+                      recipe.details[index],
+                    )),
+                childCount: recipe.details.length,
+              ),
+              gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
+                maxCrossAxisExtent: 200.0,
+                mainAxisSpacing: 10,
+                crossAxisSpacing: 10,
+                childAspectRatio: 4,
+              ),
+            ),
+          ),
+          SliverFillRemaining(
+            child: Container(),
+          ),
         ],
       ),
     );
