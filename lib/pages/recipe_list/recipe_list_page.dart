@@ -25,6 +25,7 @@ import '../../constants/app_image_paths.dart';
 import '../../shared_widgets/app_bar_widget.dart';
 import '../../data/recipe_repository.dart';
 import 'widgets/recipe_item_widget.dart';
+import 'widgets/footer_widget.dart';
 
 class RecipeListPage extends StatelessWidget {
   const RecipeListPage({Key? key}) : super(key: key);
@@ -32,7 +33,7 @@ class RecipeListPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final recipes = RecipeRepository.getRecipes();
-    //TODO #2 Add SliverAppBar
+
     //TODO #2 Add SliverPadding
     //TODO #3 Add SliverToBoxAdapter
 
@@ -54,6 +55,9 @@ class RecipeListPage extends StatelessWidget {
               ),
               itemExtent: 110,
             ),
+            const SliverToBoxAdapter(
+              child: FooterWidget(),
+            )
           ],
         ),
       ),
