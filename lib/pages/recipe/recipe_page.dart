@@ -41,6 +41,7 @@ class RecipePage extends StatelessWidget {
           AppBarWidget(
             text: recipe.title,
             imagePath: recipe.mainImagePath,
+            extendedHeightInput: 400.0,
           ),
           SliverSubHeader(
             text: 'Instruction',

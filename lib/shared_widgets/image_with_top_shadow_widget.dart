@@ -21,6 +21,7 @@
  */
 
 import 'package:flutter/material.dart';
+import 'dart:math' as math;
 
 class ImageWithTopShadowWidget extends StatelessWidget {
   final String imagePath;
@@ -36,12 +37,29 @@ class ImageWithTopShadowWidget extends StatelessWidget {
           imagePath,
           fit: BoxFit.cover,
         ),
+        // Container(
+        //   decoration: const BoxDecoration(
+        //     gradient: LinearGradient(
+        //       begin: Alignment.topCenter,
+        //       end: Alignment.bottomCenter,
+        //       colors: [Colors.black54, Colors.transparent],
+        //     ),
+        //   ),
+        // ),
         Container(
           decoration: const BoxDecoration(
-            gradient: LinearGradient(
-              begin: Alignment.topCenter,
-              end: Alignment.bottomCenter,
-              colors: [Colors.black54, Colors.transparent],
+            gradient: SweepGradient(
+              center: FractionalOffset.center,
+              startAngle: 0.0,
+              endAngle: math.pi * 2,
+              colors: <Color>[
+                Color(0xFF4285F4), // blue
+                Color(0xFF34A853), // green
+                Color(0xFFFBBC05), // yellow
+                Color(0xFFEA4335), // red
+                Color(0xFF4285F4), // blue again to transition
+              ],
+              stops: <double>[0.0, 0.25, 0.5, 0.75, 1.0],
             ),
           ),
         ),

@@ -34,15 +34,15 @@ class RecipeListPage extends StatelessWidget {
   Widget build(BuildContext context) {
     final recipes = RecipeRepository.getRecipes();
 
-    //TODO #2 Add SliverPadding
-    //TODO #3 Add SliverToBoxAdapter
-
     return SafeArea(
       child: Scaffold(
         body: CustomScrollView(
           slivers: <Widget>[
             const AppBarWidget(
-                text: 'Reciperlich', imagePath: AppImagePaths.mainImage),
+              text: 'Reciperlich',
+              imagePath: AppImagePaths.mainImage,
+              extendedHeightInput: 200.0,
+            ),
             SliverPadding(
               padding: const EdgeInsets.all(20),
               sliver: SliverFixedExtentList(

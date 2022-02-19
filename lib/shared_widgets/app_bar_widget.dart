@@ -6,12 +6,14 @@ class AppBarWidget extends StatelessWidget {
   final String text;
   final String imagePath;
   final bool centerTitle;
+  final double extendedHeightInput;
 
   const AppBarWidget({
     Key? key,
     required this.text,
     required this.imagePath,
     this.centerTitle = false,
+    required this.extendedHeightInput,
   }) : super(key: key);
 
   @override
@@ -26,18 +28,17 @@ class AppBarWidget extends StatelessWidget {
       ),
       backgroundColor: AppColors.navy,
       centerTitle: centerTitle,
-      expandedHeight:
-          200.0, // By setting the value here, you make the app bar scrollable.
-      pinned:
-          true, // When you set pinned to true, you let the app bar remain visible at the start of the scroll view.
-      elevation: 0,
+      // By setting the value expandedHeight here, you make the app bar scrollable.
+      expandedHeight: extendedHeightInput,
+      // https://api.flutter.dev/flutter/material/SliverAppBar-class.html
+      pinned: true,
+      snap: false,
+      floating: false,
+      elevation: 1,
       flexibleSpace: FlexibleSpaceBar(
+        // title: const Text('Flexible space bar title'),
         background: ImageWithTopShadowWidget(imagePath),
       ),
-      floating:
-          false, // By setting it to true, you make the app bar visible as soon as the user scrolls towards the app bar.
-      snap:
-          false, // When true, the app bar will fully expand as you scroll, which is helpful when you have a text field in the app bar.
     );
   }
 }
