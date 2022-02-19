@@ -43,17 +43,20 @@ class RecipeListPage extends StatelessWidget {
           slivers: <Widget>[
             const AppBarWidget(
                 text: 'Reciperlich', imagePath: AppImagePaths.mainImage),
-            SliverFixedExtentList(
-              delegate: SliverChildBuilderDelegate(
-                (context, index) => Padding(
-                  padding: const EdgeInsets.only(bottom: 20),
-                  child: RecipeItem(
-                    recipes[index],
+            SliverPadding(
+              padding: const EdgeInsets.all(20),
+              sliver: SliverFixedExtentList(
+                delegate: SliverChildBuilderDelegate(
+                  (context, index) => Padding(
+                    padding: const EdgeInsets.only(bottom: 20),
+                    child: RecipeItem(
+                      recipes[index],
+                    ),
                   ),
+                  childCount: recipes.length,
                 ),
-                childCount: recipes.length,
+                itemExtent: 110,
               ),
-              itemExtent: 110,
             ),
             const SliverToBoxAdapter(
               child: FooterWidget(),
